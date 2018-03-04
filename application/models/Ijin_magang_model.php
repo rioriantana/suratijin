@@ -12,6 +12,10 @@ class Ijin_magang_model extends CI_Model {
 	public $nama_pembimbing;
 	public $nip_pembimbing;
 
+	public $nama;
+	public $nim;
+	public $topik;
+
 
 	 public function get($number,$offside){
 	 	 $this->db->order_by("id", "desc"); 
@@ -31,6 +35,13 @@ class Ijin_magang_model extends CI_Model {
 
 	 }
 
+	 public function mahasiswa(){
+
+	 	 $query = $this->db->get_where('detail_ijin_magang', array('id_magang' => $_GET['id'] ));
+         return $query->result();
+
+	 }
+
 	 public function insert(){
 
 	 	$data = array(	'kepada' => $_POST['kepada'],
@@ -43,8 +54,16 @@ class Ijin_magang_model extends CI_Model {
 						'nip_pembimbing' => $_POST['nip_pembimbing']
 					);
 	 	$this->db->insert('ijin_magang', $data);
-	 	
-	 	$insert_id = $this->db->insert_id();
+	 }
+
+	 public function insertDetail(){
+
+	 	$data = array(	'id_magang' => $_POST['id_magang'],
+						'nama' => $_POST['nama'],
+						'nim' => $_POST['nim'],
+						'topik' => $_POST['topik']
+					);
+	 	$this->db->insert('detail_ijin_magang', $data);
 	 }
 
 	  public function update(){
@@ -65,6 +84,10 @@ class Ijin_magang_model extends CI_Model {
 	 public function delete(){
 	 	$this->db->where('id', $_GET['id']);
 		$this->db->delete('ijin_magang'); 
+	 }
+	  public function deleteDetail(){
+	 	$this->db->where('id', $_GET['id']);
+		$this->db->delete('detail_ijin_magang'); 
 	 }
 
 }

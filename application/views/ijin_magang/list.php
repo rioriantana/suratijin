@@ -36,7 +36,11 @@
                                                 <td><?php echo $key->nama_instansi; ?></td>
                                                 <td><?php echo $key->tanggal_mulai; ?></td>
                                                 <td><?php echo $key->nama_pembimbing; ?></td>
-                                                <td class="center"><a href="<?php echo base_url()."index.php/ijin_magang/cetak?id=".$key->id;?>" target="_blank" class="btn btn-primary">Cetak</a> <a href="<?php echo base_url()."index.php/ijin_magang/show?id=".$key->id;?>" class="btn btn-warning">Edit</a></td>
+                                                <td class="center">
+                                                    <a href="<?php echo base_url()."index.php/ijin_magang/cetak?id=".$key->id;?>" target="_blank" class="btn btn-primary">Cetak</a> 
+                                                    <a href="<?php echo base_url()."index.php/ijin_magang/show?id=".$key->id;?>" class="btn btn-warning">Edit</a>
+                                                    <a href="<?php echo base_url()."index.php/ijin_magang/detail?id=".$key->id;?>" class="btn btn-danger">Detail</a>
+                                                </td>
                                             </tr>
                                             <?php }?>
                                         </tbody>

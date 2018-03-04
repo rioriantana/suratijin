@@ -112,19 +112,14 @@
 						<td class="center">NIM</td>
 						<td class="center">TOPIK</td>
 					</tr>
+					<?php $i = 1; foreach ($mahasiswa as $detail) { ?>
 					<tr> 
-						<td class="center" width="30">1</td>
-						<td>...</td>
-						<td class="center">...</td>
-						<td>...</td>
+						<td class="center" width="30"><?php echo $i;?></td>
+						<td><?php echo $detail->nama;?></td>
+						<td class="center"><?php echo $detail->nim;?></td>
+						<td><?php echo $detail->topik;?></td>
 					</tr>
-					<tr> 
-						<td class="center" width="30">2</td>
-						<td>...</td>
-						<td class="center">...</td>
-						<td>...</td>
-					</tr>
-
+					<?php $i++; } ?>
 				</table>
 
 				<div class="prg-2"><p>Agar diperkenankan melaksanakan Kegiatan Magang Mahasiswa (KMM)  di <?php echo $key->nama_instansi; ?>  pada tanggal <?php $tanggal_mulai = new DateTime($key->tanggal_mulai); echo $tanggal_mulai->format('d-m-Y'); ?> s/d <?php $tanggal_selesai = new DateTime($key->tanggal_selesai); echo $tanggal_selesai->format('d-m-Y'); ?> .</p></div>

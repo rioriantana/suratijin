@@ -49,6 +49,21 @@ class Ijin_magang extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function detail(){
+		$this->load->model('ijin_magang_model');
+		$data['magang'] = $this->ijin_magang_model->show();
+		$data['mahasiswa'] = $this->ijin_magang_model->mahasiswa();
+		$this->load->view('header');	
+		$this->load->view('ijin_magang/detail', $data);
+		$this->load->view('footer');
+	}
+
+	public function createDetail(){
+		$this->load->view('header');
+		$this->load->view('ijin_magang/createDetail');
+		$this->load->view('footer');
+	}
+
 	public function create(){
 		$this->load->view('header');
 		$this->load->view('ijin_magang/create');
@@ -61,11 +76,24 @@ class Ijin_magang extends CI_Controller {
 		redirect('/ijin_magang/');
 	}
 
+	public function updateDetail(){
+		$this->load->model('ijin_magang_model');
+		$this->ijin_magang_model->updateDetail();
+		redirect('/ijin_magang/detail?id='.$_POST['id_magang']);
+	}
+
 	public function save(){
 		$this->load->model('ijin_magang_model');
 		$this->ijin_magang_model->insert(); 
 	 	$insert_id = $this->db->insert_id();
-		redirect('/ijin_magang/');
+		redirect('/ijin_magang/detail?id='.$insert_id);
+	}
+
+	public function saveDetail(){
+		$this->load->model('ijin_magang_model');
+		$this->ijin_magang_model->insertDetail(); 
+	 	$insert_id = $this->db->insert_id();
+		redirect('/ijin_magang/detail?id='.$_POST['id_magang']);
 	}
 
 	public function delete(){
@@ -74,11 +102,16 @@ class Ijin_magang extends CI_Controller {
 		redirect('/ijin_magang/');
 	}
 
+	public function deleteDetail(){
+		$this->load->model('ijin_magang_model');
+		$this->ijin_magang_model->deleteDetail();
+		redirect('/ijin_magang/detail?id='.$_GET['id_magang']);
+	}
+
 	public function cetak(){
 		$this->load->model('ijin_magang_model');
-
 		$data['magang'] = $this->ijin_magang_model->show();
-
+		$data['mahasiswa'] = $this->ijin_magang_model->mahasiswa();
 		$this->load->view('ijin_magang/cetak', $data);
 	}
 }
