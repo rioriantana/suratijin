@@ -61,6 +61,8 @@
             <li><a href="<?php echo base_url();?>index.php/ijin_magang"><i class="fa fa-group fa-fw"></i> Surat Ijin Magang</a></li>
             <li><a href="<?php echo base_url();?>index.php/ijin_penelitian"><i class="fa fa-book fa-fw"></i> Surat Ijin Penelitian</a></li>
             <li><a href="<?php echo base_url();?>index.php/ijin_pinjam_alat"><i class="fa fa-wrench fa-fw"></i> Surat Ijin Pinjam Alat</a></li>
+            <li><a href="<?php echo base_url();?>index.php/uji_sample"><i class="fa fa-wrench fa-fw"></i> Surat Ijin Uji Sample</a></li>
+            <li><a href="<?php echo base_url();?>index.php/ijin_akses_lab"><i class="fa fa-wrench fa-fw"></i> Surat Ijin Akses Lab</a></li>
         </ul>
 
         <!-- Top Navigation: Right Menu -->
@@ -91,6 +93,8 @@
                                 <a href="<?php echo base_url();?>index.php/ijin_magang">Surat Ijin Magang</a>
                                 <a href="<?php echo base_url();?>index.php/ijin_penelitian">Surat Ijin Penelitian</a>
                                 <a href="<?php echo base_url();?>index.php/ijin_pinjam_alat">Surat Ijin Pinjam Alat</a>
+                                <a href="<?php echo base_url();?>index.php/uji_sample">Surat Ijin Uji Sample</a>
+                                <a href="<?php echo base_url();?>index.php/ijin_akses_lab">Surat Ijin Akses Lab</a>
                             </li>
                         </ul>
                     </li>

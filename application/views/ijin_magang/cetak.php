@@ -2,7 +2,26 @@
 <html>
 <head>
 	<title>Surat Magang</title>
+	<?php
+
+	$bulan = array(
+                '01' => 'JANUARI',
+                '02' => 'FEBRUARI',
+                '03' => 'MARET',
+                '04' => 'APRIL',
+                '05' => 'MEI',
+                '06' => 'JUNI',
+                '07' => 'JULI',
+                '08' => 'AGUSTUS',
+                '09' => 'SEPTEMBER',
+                '10' => 'OKTOBER',
+                '11' => 'NOVEMBER',
+                '12' => 'DESEMBER',
+        );
+
+	?>
 <style type="text/css">
+
  	@page {
         size: A4 portrait;
         @top-center {
@@ -98,7 +117,7 @@
 				foreach ($magang as $key) {
 
 				?>
-				Nomor : <br>
+				Nomor : <div class="kanan"><?php echo date("d")." ".$bulan[date("m")]." ".date("Y");?></div><br>
 				Hal <div class="tab-hal"> : Permohonan Ijin Kegiatan Magang Mahasiswa (KMM)</div>
 				<div class="yth">Yth. <?php echo $key->kepada; ?></div>
 				<div class="alamat-yth"><?php echo $key->alamat_kepada; ?></div>

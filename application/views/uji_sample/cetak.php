@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Surat Peminjaman Alat</title>
-	<?php
+	<title>Surat Ijin Penelitian TA</title><?php
 
 	$bulan = array(
                 '01' => 'JANUARI',
@@ -97,6 +96,9 @@
 		padding-left: 80px;
 		margin-top: -18px;
 	}
+	.kanan{
+		float: right;
+	}
 </style>
 <script type="text/javascript">
     window.print();
@@ -110,21 +112,21 @@
 			<div class="isi">
 				<?php
 
-				foreach ($pinjam_alat as $key) {
+				foreach ($uji_sample as $key) {
 
 				?>
 				Nomor : <div class="kanan"><?php echo date("d")." ".$bulan[date("m")]." ".date("Y");?></div><br>
-				Hal <div class="tab-hal"> : Permohonan Pinjam Alat </div>
+				Hal <div class="tab-hal"> : Uji Sample Tugas Akhir </div>
 				<div class="yth">Yth. <?php echo $key->kepada; ?></div>
 				<div class="alamat-yth"><?php echo $key->alamat_kepada; ?></div>
-				<div class="kota-yth"><?php echo $key->tempat_instansi; ?></div>
-				<div class="prg-1"><p>Dengan hormat, <br> Yang bertanda tangan dibawah ini Pembimbing Skripsi, menerangkan bahwa mahasiswa tersebut dibawah ini : </p></div>
+				<div class="kota-yth"><?php echo $key->tempat_penelitian; ?></div>
+				<div class="prg-1"><p>Kami sampaikan dengan hormat bahwa yang bertanda tangan dibawah ini Pembimbing Tugas Akhir, menerangkan bahwa mahasiswa tersebut dibawah : </p></div>
 				
 				<div class="mahasiswa">Nama <div class="isi-nama">: <?php echo $key->nama; ?></div></div>
 				<div class="mahasiswa">NIM <div class="isi-nim">: <?php echo $key->nim; ?></div></div>
 				<div class="mahasiswa">Topik <div class="isi-topik">: <?php echo $key->topik; ?></div></div>
 
-				<div class="prg-2"><p>Adalah mahasiswa Program Studi Fisika FMIPA UNS yang akan melaksanakan Skripsi, sehubungan dengan hal tersebut mohon yang bersangkutan diberikan ijin untuk menggunakan alat berupa <?php echo $key->nama_alat; ?> di <?php echo $key->nama_instansi; ?>, mulai tanggal <?php $tanggal_mulai = new DateTime($key->tanggal_mulai); echo $tanggal_mulai->format('d-m-Y'); ?> sampai dengan <?php $tanggal_selesai = new DateTime($key->tanggal_selesai); echo $tanggal_selesai->format('d-m-Y'); ?>.</p></div>
+				<div class="prg-2"><p>Adalah mahasiswa Program Studi Fisika FMIPA UNS yang akan melaksanakan Penelitian Tugas Akhir, sehubungan dengan hal tersebut mohon yang bersangkutan diberikan ijin untuk menguji sample di  <?php echo $key->nama_instansi; ?> mulai tanggal  <?php $tanggal_mulai = new DateTime($key->tanggal_mulai); echo $tanggal_mulai->format('d-m-Y'); ?> sampai dengan <?php $tanggal_selesai = new DateTime($key->tanggal_selesai); echo $tanggal_selesai->format('d-m-Y'); ?>.</p></div>
 				<div class="prg-3"><p>Demikian permohonan ini kami sampaikan, atas perhatian dan kerjasamanya kami ucapkan banyak terima kasih.</p></div>
 				<div>Mengetahui,</div>
 				<div class="jabatan">Kepala Program Studi Fisika, <div class="koordinator-kkn">Pembimbing,</div></div>
